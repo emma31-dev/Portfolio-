@@ -1,5 +1,5 @@
 import React, { useState, type FormEvent } from 'react'
-import emailjs from '@emailjs/browser'
+// Removed emailjs import because it's not currently used. Re-add when implementing direct email sending.
 import './Contact.css'
 
 interface FormData {
