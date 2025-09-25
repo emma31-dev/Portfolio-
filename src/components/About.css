@@ -1,0 +1,358 @@
+.about {
+  padding: 100px 0;
+  background: var(--bg-primary);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: stretch;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-text {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.about-paragraph {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gradient-start);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-number svg {
+  transition: transform 0.3s ease;
+}
+
+.stat:hover .stat-number svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.stat-label {
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.about-image {
+  display: flex;
+  justify-content: center;
+  animation: fadeInRight 0.8s ease-out;
+  align-items: stretch;
+}
+
+.about-card {
+  background: var(--bg-primary);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px var(--shadow);
+  max-width: 350px;
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+.about-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-card h3 svg {
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover h3 svg {
+  transform: scale(1.1);
+}
+
+.about-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-card li {
+  padding: 0.75rem 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.about-card li:hover {
+  color: var(--gradient-start);
+  padding-left: 0.5rem;
+}
+
+.about-card li svg {
+  flex-shrink: 0;
+}
+
+.about-card li:last-child {
+  border-bottom: none;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile styles */
+
+
+/* Journey Section Styles */
+.journey-section {
+  margin-top: 4rem;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.journey-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
+}
+
+.journey-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.journey-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.journey-card:hover .journey-icon svg {
+  transform: scale(1.1);
+}
+
+.journey-card h3 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.journey-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.journey-card li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.journey-card li::before {
+  content: '•';
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.journey-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+  .about-content {
+    gap: 6rem;
+  }
+  
+  .about-card {
+    max-width: 400px;
+    padding: 3rem;
+    height: 100%;
+  }
+  
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .journey-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+  }
+}
+
+/* Medium-large screens */
+@media (min-width: 992px) and (max-width: 1399px) {
+  .about-content {
+    gap: 5rem;
+  }
+  
+  .about-card {
+    max-width: 380px;
+    padding: 2.75rem;
+    height: 100%;
+  }
+  
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .about-card {
+    max-width: 100%;
+    padding: 2rem;
+  }
+  
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .journey-card {
+    padding: 1rem;
+  }
+  
+  .journey-icon {
+    font-size: 1.5rem;
+  }
+}
