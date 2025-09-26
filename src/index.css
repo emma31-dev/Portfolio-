@@ -22,12 +22,14 @@ a:hover {
   color: #535bf2;
 }
 
+/* Reset conflicting Vite template layout that was forcing a centered flex body
+   and breaking natural vertical flow/responsiveness. */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  display: block; /* allow sections to stack naturally */
+  width: 100%;
 }
 
 h1 {
