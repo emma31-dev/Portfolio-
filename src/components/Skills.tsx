@@ -12,18 +12,27 @@ const Skills: React.FC = () => {
     // Frontend Technologies
     { name: "JavaScript/ES6+", level: 95, category: "Frontend" },
     { name: "TypeScript", level: 90, category: "Frontend" },
-    { name: "React 18", level: 95, category: "Frontend" },
-    { name: "Next.js", level: 85, category: "Frontend" },
+    { name: "React.js 18", level: 95, category: "Frontend" },
+    { name: "Next.js 15", level: 85, category: "Frontend" },
     { name: "HTML5/CSS3", level: 95, category: "Frontend" },
     { name: "Tailwind CSS", level: 90, category: "Frontend" },
+    { name: "React-Native", level: 10, category: "Frontend" },
     
     // Tools & Others
     { name: "Git/GitHub", level: 90, category: "Tools" },
     { name: "Webpack/Vite", level: 85, category: "Tools" },
     { name: "Jest/Testing Library", level: 80, category: "Tools" },
     { name: "Figma/Design", level: 75, category: "Tools" },
+    { name: "Vercel", level: 70, category: "Tools" },
+    { name: "PXXL", level: 60, category: "Tools"},
+    { name: "Thirdweb SDK", level: 10, category: "Tools" },
     { name: "Node.js", level: 70, category: "Backend" },
-    { name: "MongoDB", level: 70, category: "Backend" }
+    { name: "Next.js server", level: 50, category: "Backend" },
+    { name: "Solidity", level: 30, category: "Backend" },
+    { name: "Hardhat", level: 10, category: "Backend" },
+    { name: "Ethers.js", level: 5, category: "Backend"},
+    { name: "MongoDB", level: 40, category: "Backend" },
+    { name: "Helia/IPFS", level: 40, category: "Backend"}
   ]
 
   const categories = ["Frontend", "Tools", "Backend"]
@@ -75,7 +84,7 @@ const Skills: React.FC = () => {
                   </svg>
                 </div>
                 <h4>Professional Development</h4>
-                <p>3+ years building scalable web applications with modern frameworks and best practices.</p>
+                <p>10+ months building scalable web applications with modern frameworks and best practices.</p>
               </div>
               <div className="experience-card">
                 <div className="experience-icon">
@@ -96,7 +105,7 @@ const Skills: React.FC = () => {
                   </svg>
                 </div>
                 <h4>Team Collaboration</h4>
-                <p>Experience working in agile teams, code reviews, and mentoring junior developers.</p>
+                <p>Experience working in agile teams, code reviews, and mentoring 5 other junior developers.</p>
               </div>
               <div className="experience-card">
                 <div className="experience-icon">

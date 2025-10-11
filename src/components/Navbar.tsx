@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="nav-container">
         <div className="nav-logo">
-          <a href="#home">Emmanuel</a>
+          <a href="#home">Portfolio</a>
         </div>
         <div className={isMenuOpen ? "nav-menu active" : "nav-menu"}>
           <a href="#home" className="nav-link" onClick={() => setIsMenuOpen(false)}>

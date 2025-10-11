@@ -3,7 +3,7 @@ import './Hero.css'
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('')
-  const fullText = 'Passionate Frontend Developer'
+  const fullText = 'Junior Frontend Developer'
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Hi, I'm <span className="hero-name">Emmanuel Fidel</span>
+            Hi, I'm <span className="hero-name">Emmanuel</span>
           </h1>
           <h2 className="hero-subtitle">
             {text}<span className="cursor">|</span>

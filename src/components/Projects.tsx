@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import './Projects.css'
 
 interface Project {
@@ -18,6 +18,11 @@ interface Project {
 
 const Projects: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoplay, setIsAutoplay] = useState(true)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
   
   const projects: Project[] = [
     {
@@ -32,7 +37,7 @@ const Projects: React.FC = () => {
       },
       github: "https://github.com/emmanuelfidel/crypto-news-app",
       demo: "https://crypto-news-demo.netlify.app",
-      image: ""
+      image: "/Reactive.png"
     },
     {
       id: 2,
@@ -46,7 +51,7 @@ const Projects: React.FC = () => {
       },
       github: "https://github.com/emmanuelfidel/countdown-timer",
       demo: "https://countdown-timer-demo.netlify.app",
-      image: ""
+      image: "/Portfolio.png"
     },
     {
       id: 3,
@@ -59,8 +64,8 @@ const Projects: React.FC = () => {
         metric: "Optimized performance & UX"
       },
       github: "https://github.com/emmanuelfidel/portfolio",
-      demo: "#home",
-      image: ""
+      demo: "",
+      image: "/Portfolio.png"
     },
     {
       id: 4,
@@ -74,7 +79,7 @@ const Projects: React.FC = () => {
       },
       github: "https://github.com/emmanuelfidel/ai-task-manager",
       demo: "https://ai-task-manager.vercel.app",
-      image: ""
+      image: "/Reactive.png"
     },
     {
       id: 5,
@@ -88,62 +93,77 @@ const Projects: React.FC = () => {
       },
       github: "https://github.com/emmanuelfidel/ecommerce-platform",
       demo: "https://ecommerce-demo.herokuapp.com",
-      image: ""
+      image: "/Portfolio.png"
     }
   ]
 
-  // Auto-scroll functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length)
-    }, 4000) // Change slide every 4 seconds
 
-    return () => clearInterval(interval)
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % projects.length)
   }, [projects.length])
 
-  // Add icons for the new projects
-  const getProjectIcon = (id: number) => {
-    switch (id) {
-      case 1:
-        return (
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 3V21H21V3H3ZM19 19H5V5H19V19Z" fill="white"/>
-            <path d="M7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H13V17H7V15Z" fill="white"/>
-          </svg>
-        )
-      case 2:
-        return (
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        )
-      case 3:
-        return (
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6.09 6.09C4.93 4.93 4.93 3.07 6.09 1.91L10.5 6.32L17.68 13.5L22.09 17.91C20.93 19.07 19.07 19.07 17.91 17.91L6.09 6.09Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M12 12L8 8M16 12C18.21 12 20 10.21 20 8C20 5.79 18.21 4 16 4C13.79 4 12 5.79 12 8C12 10.21 13.79 12 16 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        )
-      case 4:
-        return (
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M12 22V12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M22 7L12 12L2 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        )
-      case 5:
-        return (
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 2L3 6V20C3 21.11 3.89 22 5 22H19C20.11 22 21 21.11 21 20V6L18 2H6Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M6 6H18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M16 10C16 11.11 15.11 12 14 12C12.89 12 12 11.11 12 10C12 8.89 12.89 8 14 8C15.11 8 16 8.89 16 10Z" stroke="white" strokeWidth="2"/>
-          </svg>
-        )
-      default:
-        return null
-    }
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1))
+  }, [projects.length])
+
+  const goToSlide = useCallback((index: number) => {
+    setCurrentIndex(index)
+  }, [])
+
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(0)
+    setTouchStart(e.targetTouches[0].clientX)
   }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe) nextSlide()
+    if (isRightSwipe) prevSlide()
+  }
+
+  // Keyboard navigation
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') prevSlide()
+    if (e.key === 'ArrowRight') nextSlide()
+    if (e.key === ' ') {
+      e.preventDefault()
+      setIsAutoplay(!isAutoplay)
+    }
+  }, [nextSlide, prevSlide, isAutoplay])
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (isAutoplay) {
+      intervalRef.current = setInterval(nextSlide, 4000)
+    } else {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [isAutoplay, nextSlide])
+
+  // Keyboard event listener
+  useEffect(() => {
+    const carousel = carouselRef.current
+    if (carousel) {
+      carousel.addEventListener('keydown', handleKeyDown)
+      return () => carousel.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [handleKeyDown])
+
+  // Pause autoplay on hover
+  const handleMouseEnter = () => setIsAutoplay(false)
+  const handleMouseLeave = () => setIsAutoplay(true)
 
   return (
     <section id="projects" className="projects">
@@ -152,22 +172,46 @@ const Projects: React.FC = () => {
         <p className="section-subtitle">
           Real-world applications that solve problems and create value for users
         </p>
-        <div className="projects-carousel">
+        <div 
+          className="projects-carousel"
+          ref={carouselRef}
+          tabIndex={0}
+          role="region"
+          aria-label="Projects carousel"
+          aria-live="polite"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <div className="carousel-container">
             <div 
               className="carousel-track"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
-              {projects.map((project) => (
-                <div key={project.id} className="project-card">
-                  <div className="project-image">
-                    <div className="project-icon">
-                      {getProjectIcon(project.id)}
+              {projects.map((project, index) => (
+                <div 
+                  key={project.id} 
+                  className="project-card"
+                  aria-hidden={index !== currentIndex}
+                >
+                  <div className="project-left">
+                    <div className="project-image">
+                      {project.image && (
+                        <img 
+                          src={project.image} 
+                          alt={`${project.title} screenshot`}
+                          loading="lazy"
+                        />
+                      )}
                     </div>
-                    <div className="project-overlay">
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                        Live Demo
-                      </a>
+                    <div className="project-buttons">
+                      {project.demo && (
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                          Live Demo
+                        </a>
+                      )}
                       <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         View Code
                       </a>
@@ -208,8 +252,8 @@ const Projects: React.FC = () => {
           <div className="carousel-navigation">
             <button 
               className="carousel-btn prev"
-              onClick={() => setCurrentIndex(currentIndex === 0 ? projects.length - 1 : currentIndex - 1)}
-              aria-label="Previous project"
+              onClick={prevSlide}
+              aria-label={`Previous project. Currently showing ${projects[currentIndex].title}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <polyline points="15,18 9,12 15,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -217,8 +261,8 @@ const Projects: React.FC = () => {
             </button>
             <button 
               className="carousel-btn next"
-              onClick={() => setCurrentIndex((currentIndex + 1) % projects.length)}
-              aria-label="Next project"
+              onClick={nextSlide}
+              aria-label={`Next project. Currently showing ${projects[currentIndex].title}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <polyline points="9,18 15,12 9,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -226,16 +270,42 @@ const Projects: React.FC = () => {
             </button>
           </div>
           
+          {/* Autoplay Control */}
+          <button 
+            className="autoplay-btn"
+            onClick={() => setIsAutoplay(!isAutoplay)}
+            aria-label={isAutoplay ? 'Pause autoplay' : 'Start autoplay'}
+          >
+            {isAutoplay ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+                <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+              </svg>
+            )}
+          </button>
+          
           {/* Carousel Indicators */}
-          <div className="carousel-indicators">
-            {projects.map((_, index) => (
+          <div className="carousel-indicators" role="tablist">
+            {projects.map((project, index) => (
               <button
                 key={index}
                 className={`indicator ${index === currentIndex ? 'active' : ''}`}
-                onClick={() => setCurrentIndex(index)}
-                aria-label={`Go to project ${index + 1}`}
+                onClick={() => goToSlide(index)}
+                role="tab"
+                aria-selected={index === currentIndex}
+                aria-label={`Go to ${project.title}`}
+                aria-controls={`project-${project.id}`}
               />
             ))}
+          </div>
+          
+          {/* Screen Reader Status */}
+          <div className="sr-only" aria-live="polite" aria-atomic="true">
+            Showing project {currentIndex + 1} of {projects.length}: {projects[currentIndex].title}
           </div>
         </div>
       </div>
