@@ -1,7 +1,8 @@
+import { forwardRef } from 'react'
 import React, { useEffect, useState } from 'react'
 import './Hero.css'
 
-const Hero: React.FC = () => {
+const Hero: React.FC = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) => {
   const [text, setText] = useState('')
   const fullText = 'Junior Frontend Developer'
   const [index, setIndex] = useState(0)
@@ -17,7 +18,7 @@ const Hero: React.FC = () => {
   }, [index, fullText])
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" ref={ref}{...props}>
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -28,8 +29,7 @@ const Hero: React.FC = () => {
           </h2>
           <p className="hero-description">
             A passionate frontend developer who loves building beautiful, responsive, 
-            and interactive web experiences. I specialize in React, Next.js, and modern 
-            web technologies, always learning and pushing the boundaries of what's possible.
+            and interactive web experiences.
           </p>
           <div className="hero-buttons">
             <a href="#projects" className="btn btn-primary">View My Work</a>
@@ -44,6 +44,6 @@ const Hero: React.FC = () => {
       </div>
     </section>
   )
-}
+})
 
 export default Hero

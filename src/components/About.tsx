@@ -14,12 +14,7 @@ const About: React.FC = () => {
               who not only writes code but also thinks in design, user experience, and product goals.
             </p>
             <p className="about-paragraph">
-              I specialize in HTML, CSS, JavaScript, React, Tailwind CSS, and Next.js, and I've worked with tools like Firebase, Git & GitHub, 
-              and basic backend stacks. Whether it's crafting a personal project, debugging tricky bugs, or building a complete UI from scratch, 
-              I'm always up for the challenge.
-            </p>
-            <p className="about-paragraph">
-              What sets me apart is my speed of learning and the way I take ownership of my growth. I use AI as a tool to support my ideas — not replace them. 
+              What sets me apart is my speed of learning and the way I take ownership of my growth. I use AI as a tool to support my ideas not replace them. 
               Every project I build is led by my vision, guided by logic, and improved by feedback.
             </p>
             <div className="about-stats">
@@ -84,7 +79,7 @@ const About: React.FC = () => {
                     <path d="M14.5 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V7.5L14.5 2Z" stroke="#667eea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <polyline points="14,2 14,8 20,8" stroke="#667eea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  State management & React components
+                  Clean codebase organization
                 </li>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,13 +92,13 @@ const About: React.FC = () => {
                     <polyline points="16,18 22,12 16,6" stroke="#667eea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <polyline points="8,6 2,12 8,18" stroke="#667eea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  Vanilla JS/TS & DOM manipulation
+                  Deep understanding of type logic
                 </li>
                 <li>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2" stroke="#667eea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                  React & Next.js environments
+                  Build MVPs quickly
                 </li>
               </ul>
             </div>
@@ -124,7 +119,7 @@ const About: React.FC = () => {
               <ul>
                 <li>Deeper backend with NestJS and Express</li>
                 <li>Mobile development with Flutter & React Native</li>
-                <li>Web3 integrations preparing for dApps in 2025</li>
+                <li>Web3 integrations preparing for dApps in 2026</li>
               </ul>
             </div>
             
@@ -157,7 +152,7 @@ const About: React.FC = () => {
               <h3>Vision</h3>
               <p>
                 To become a standout developer who builds tools that are useful, usable, and scalable. 
-                Whether through a startup idea, freelance work, or joining a team — I'm here to build 
+                Whether through a startup idea, freelance work, or joining a team. I'm here to build 
                 and leave impact through clean code and creative solutions.
               </p>
             </div>

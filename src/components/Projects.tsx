@@ -22,20 +22,20 @@ const Projects: React.FC = () => {
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+  const intervalRef = useRef<number | null>(null)
   
   const projects: Project[] = [
     {
       id: 1,
-      title: "Crypto News Web App",
-      description: "A comprehensive cryptocurrency news platform featuring dark/light mode toggle, real-time updates, clean responsive design, and intuitive user interface. Built with modern JavaScript and API integration.",
-      technologies: ["React", "CSS3", "News API", "JavaScript", "Dark Mode"],
+      title: "Reactive news App",
+      description: "A comprehensive reactive network news platform featuring dark/light mode toggle, real-time updates, clean responsive design, and intuitive user interface. Built with modern JavaScript and API integration.",
+      technologies: ["React", "Tailwind", "Nextjs", "News API", "WalletConnect", "Solidity"],
       impact: {
         users: "Live Demo Available",
         improvement: "Seamless theme switching",
         metric: "Fully responsive design"
       },
-      github: "https://github.com/emmanuelfidel/crypto-news-app",
+      github: "https://github.com/emmanuelfidel/Reactive-news-app",
       demo: "https://crypto-news-demo.netlify.app",
       image: "/Reactive.png"
     },
