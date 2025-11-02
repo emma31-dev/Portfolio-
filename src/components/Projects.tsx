@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, forwardRef } from 'react'
 import './Projects.css'
 
 interface Project {
@@ -16,7 +16,7 @@ interface Project {
   image: string
 }
 
-const Projects: React.FC = () => {
+const Projects = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoplay, setIsAutoplay] = useState(true)
   const [touchStart, setTouchStart] = useState(0)
@@ -166,7 +166,7 @@ const Projects: React.FC = () => {
   const handleMouseLeave = () => setIsAutoplay(true)
 
   return (
-    <section id="projects" className="projects">
+    <section id="projects" className={`projects ${props.className || ''}`} ref={ref}>
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
         <p className="section-subtitle">
@@ -311,6 +311,6 @@ const Projects: React.FC = () => {
       </div>
     </section>
   )
-}
+})
 
 export default Projects

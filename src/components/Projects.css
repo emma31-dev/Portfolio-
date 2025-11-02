@@ -245,7 +245,7 @@
 }
 
 .carousel-btn svg {
-  color: #667eea;
+  color: var(--icon-color);
 }
 
 /* Autoplay Control */
@@ -274,7 +274,7 @@
 }
 
 .autoplay-btn svg {
-  color: #667eea;
+  color: var(--icon-color);
 }
 
 /* Screen Reader Only */
@@ -298,14 +298,14 @@
 
 /* Focus Styles */
 .projects-carousel:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid var(--text-primary);
   outline-offset: 4px;
 }
 
 .carousel-btn:focus,
 .indicator:focus,
 .autoplay-btn:focus {
-  outline: 2px solid #667eea;
+  outline: 2px solid var(--text-primary);
   outline-offset: 2px;
 }
 
@@ -322,18 +322,18 @@
   height: 12px;
   border-radius: 50%;
   border: none;
-  background: rgba(102, 126, 234, 0.3);
+  background: var(--border-color);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .indicator.active {
-  background: #667eea;
+  background: var(--text-primary);
   transform: scale(1.2);
 }
 
 .indicator:hover {
-  background: #667eea;
+  background: var(--text-primary);
   transform: scale(1.1);
 }
 
