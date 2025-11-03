@@ -4,7 +4,7 @@ import './Hero.css'
 
 const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) => {
   const [text, setText] = useState('')
-  const fullText = 'Junior Frontend Developer'
+  const fullText = 'Frontend Developer'
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -36,6 +36,9 @@ const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) 
             <a href="#contact" className="btn btn-secondary">Get In Touch</a>
           </div>
         </div>
+      </div>
+      <div className="hero-illustration">
+        <img src="/illustration.png" alt="Developer illustration" />
       </div>
     </section>
   )

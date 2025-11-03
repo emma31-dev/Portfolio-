@@ -105,6 +105,7 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   color: white;
+  z-index: 3;
 }
 
 .btn-primary:hover {
@@ -117,6 +118,7 @@ body {
   background: transparent;
   color: var(--gradient-start);
   border: 2px solid var(--gradient-start);
+  z-index: 1;
 }
 
 .btn-secondary:hover {

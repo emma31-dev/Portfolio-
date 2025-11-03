@@ -68,12 +68,34 @@
 
 .project-card:hover .project-image img {
   transform: scale(1.05);
+  filter: brightness(0.3);
 }
 
 .project-left {
   display: flex;
   flex-direction: column;
 }
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-image:hover .project-overlay {
+  opacity: 1;
+}
+
+
 
 .project-buttons {
   padding: 1rem;
@@ -111,10 +133,45 @@
   margin-bottom: 1rem;
 }
 
+.project-details {
+  margin-bottom: 1.5rem;
+}
+
+.project-summary {
+  cursor: pointer;
+  color: var(--gradient-start);
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  list-style: none;
+  transition: color 0.3s ease;
+}
+
+.project-summary:hover {
+  color: var(--text-primary);
+}
+
+.project-summary::-webkit-details-marker {
+  display: none;
+}
+
 .project-description {
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin: 1rem 0 0 0;
+  padding-top: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-tech {
@@ -125,7 +182,7 @@
 }
 
 .tech-tag {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--text-secondary);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -386,10 +443,7 @@
     display: none;
   }
   
-  .project-buttons {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+
   
   .project-title {
     font-size: 1.25rem;

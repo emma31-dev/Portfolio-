@@ -170,7 +170,8 @@ const Projects = forwardRef<HTMLElement, { className?: string }>((props, ref) =>
       <div className="container">
         <h2 className="section-title">Featured Projects</h2>
         <p className="section-subtitle">
-          Real-world applications that solve problems and create value for users
+          Real-world applications that solve problems and create value for users.
+          Check it out yourself
         </p>
         <div 
           className="projects-carousel"
@@ -205,21 +206,24 @@ const Projects = forwardRef<HTMLElement, { className?: string }>((props, ref) =>
                           loading="lazy"
                         />
                       )}
-                    </div>
-                    <div className="project-buttons">
-                      {project.demo && (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                          Live Demo
+                      <div className="project-overlay">
+                        {project.demo && (
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                            Live Demo
+                          </a>
+                        )}
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                          View Code
                         </a>
-                      )}
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                        View Code
-                      </a>
+                      </div>
                     </div>
                   </div>
                   <div className="project-content">
                     <h3 className="project-title">{project.title}</h3>
-                    <p className="project-description">{project.description}</p>
+                    <details className="project-details">
+                      <summary className="project-summary">View Description</summary>
+                      <p className="project-description">{project.description}</p>
+                    </details>
                     <div className="project-tech">
                       {project.technologies.map((tech, index) => (
                         <span key={index} className="tech-tag">{tech}</span>

@@ -6,18 +6,28 @@ const About = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
     <section id="about" className={`about ${props.className || ''}`} ref={ref}>
       <div className="container">
         <h2 className="section-title">About Me</h2>
+        <div className="quote-section">
+          <blockquote className="inspirational-quote">
+            <span className="quote-mark">&quot;</span>
+            Simplicity is the greatest sophistication
+            <span className="quote-mark">&quot;</span>
+            <cite>— Leonardo da Vinci</cite>
+          </blockquote>
+        </div>
         <div className="about-content">
           <div className="about-text">
             <p className="about-paragraph">
-              Hey! I'm a passionate frontend developer with a love for building beautiful, responsive, and interactive web experiences. 
-              I started my journey in web development through curiosity and self-learning, and over time, I've grown into a developer 
-              who not only writes code but also thinks in design, user experience, and product goals.
+              I love Simplicity in my work and i try to make every project i work on as optimized as possible.
+              I started my journey in Data analysis actually but quickly transitioned when i knew it wasn't the career for me.
+              I've grown into a developer who not only writes code but also thinks in performance, design, user experience, and product goals.
             </p>
             <p className="about-paragraph">
-              What sets me apart is my speed of learning and the way I take ownership of my growth. I use AI as a tool to support my ideas not replace them. 
+              What sets me apart is my speed of learning and the way I take ownership of my growth. 
+              I am free going working on projects with or without AI. 
+              I use AI as a tool to support my ideas not replace them. 
               Every project I build is led by my vision, guided by logic, and improved by feedback.
+              And no, AI isn't replacing me(*yet).
             </p>
-            
           </div>
           <div className="about-image">
             <div className="about-card">
@@ -87,7 +97,8 @@ const About = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
               </div>
               <h3>Currently Learning</h3>
               <ul>
-                <li>Deeper backend with NestJS and Express</li>
+                <li>Deeper frontend with nextjs and Redux</li>
+                <li>Deeper backend with NodeJS and Express, Nestjs maybe</li>
                 <li>Mobile development with Flutter & React Native</li>
                 <li>Web3 integrations preparing for dApps in 2026</li>
               </ul>
@@ -105,9 +116,10 @@ const About = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
               </div>
               <h3>What Drives Me</h3>
               <p>
-                I love solving problems, building useful things, and leveling up every single day. 
-                I'm focused on becoming a well-rounded full-stack or Web3 developer, and I enjoy 
-                documenting my growth through consistent coding and project building.
+                I love solving problems(ex-mathematician). I can solve yours for you. For a fee ofcourse. 
+                I'm focused on becoming a well-rounded full-stack Web3 developer. 
+                Most importantly I want to make money. 
+                Truth is, everyone wants money Atleast I'm honest with you.
               </p>
             </div>
             
@@ -122,8 +134,9 @@ const About = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
               <h3>Vision</h3>
               <p>
                 To become a standout developer who builds tools that are useful, usable, and scalable. 
-                Whether through a startup idea, freelance work, or joining a team. I'm here to build 
-                and leave impact through clean code and creative solutions.
+                Whether through a startup idea, freelance work, or joining teams. I'm here to build 
+                and leave impact through clean code and creative solutions to current and potential problems.
+                Yes, potential problems, problems will always arise.
               </p>
             </div>
           </div>

@@ -3,6 +3,36 @@
   background: var(--bg-primary);
 }
 
+.quote-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.inspirational-quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  position: relative;
+  margin: 0;
+  padding: 2rem;
+}
+
+.quote-mark {
+  font-size: 2rem;
+  color: var(--gradient-start);
+  font-family: serif;
+  line-height: 1;
+  vertical-align: top;
+}
+
+.inspirational-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  font-style: normal;
+}
+
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;

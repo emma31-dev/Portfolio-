@@ -7,13 +7,9 @@
   max-width: 400px;
 }
 
-.contact .section-title,
 .contact .section-subtitle {
+  margin-top: 1.5rem;
   color: var(--text-primary);
-}
-
-.contact .section-title::after {
-  background: #ccc;
 }
 
 .contact-content {
