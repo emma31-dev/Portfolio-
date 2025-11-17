@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
 /* CSS Variables for Light/Dark Mode */
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #eee;
+  --bg-primary: #fff;
+  --bg-secondary: #f5f5f5;
   --bg-hero: linear-gradient(225deg,#ccc, #f5f5f5, #f5f5e5, #f5f5f5, #f5f5f5, #f5f5f5, #ccc);
-  --bg-tertiary: #e5e5e5;
+  --bg-tertiary: #f9f9f9;
   --text-primary: #000000;
   --text-secondary: #3f3f3f;
   --text-tertiary: #666666;
@@ -15,9 +17,9 @@
 }
 
 [data-theme="dark"] {
-  --bg-primary: #000000;
-  --bg-secondary: linear-gradient(45deg, #1a1a1a, #444444);
-  --bg-hero: linear-gradient(225deg, #333, #1a1a1a, #1a1a1a, #1a1a1a, #333);
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #444444;
+  --bg-hero: linear-gradient(225deg, #333, #1a1a1a, #1a1a1a, #1a1a1a, #1a1a1a, #1a1a1a, #333);
   --bg-tertiary: #333333;
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
@@ -35,8 +37,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
 body {
   font-family: 'JetBrains Mono', monospace;
@@ -95,8 +95,10 @@ body {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
+  white-space: nowrap;
   text-align: center;
   transition: all 0.3s ease;
+  box-shadow: 0 0 3 #000000;
   cursor: pointer;
   border: none;
   font-size: 1rem;
@@ -105,7 +107,7 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   color: white;
-  z-index: 3;
+  z-index: 3000;
 }
 
 .btn-primary:hover {
@@ -118,7 +120,7 @@ body {
   background: transparent;
   color: var(--gradient-start);
   border: 2px solid var(--gradient-start);
-  z-index: 1;
+  z-index: 1000;
 }
 
 .btn-secondary:hover {
@@ -137,6 +139,29 @@ html {
   from {
     opacity: 0;
     transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global section animation with Intersection Observer */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes sectionSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
   to {
     opacity: 1;

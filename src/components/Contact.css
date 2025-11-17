@@ -3,8 +3,32 @@
   background: var(--bg-secondary);
 }
 
+.contact .section-title,
+.contact .section-subtitle {
+  opacity: 0;
+  animation: slideUpFade 0.5s ease-out forwards;
+}
+
+.contact .section-title { animation-delay: 0.1s; }
+.contact .section-subtitle { animation-delay: 0.2s; }
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .container {
   max-width: 400px;
+}
+
+.container p {
+  margin-top: 40px;
 }
 
 .contact .section-subtitle {
@@ -29,7 +53,9 @@
 }
 
 .contact-info {
-  animation: fadeInLeft 0.8s ease-out;
+  opacity: 0;
+  animation: slideUpFade 0.5s ease-out forwards;
+  animation-delay: 0.3s;
   box-sizing: border-box;
 }
 
@@ -71,6 +97,7 @@
 .contact-item:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: translateX(5px);
+  min-height: 70px;
 }
 
 .contact-icon {
@@ -94,12 +121,13 @@
 .contact-item h4 {
   font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .contact-item p,
 .contact-item a {
   color: var(--text-secondary);
+  word-break: break-all;
   text-decoration: none;
   transition: color 0.3s ease;
 }

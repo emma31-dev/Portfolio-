@@ -1,3 +1,4 @@
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './Footer.css'
 
 interface FooterProps {
@@ -5,10 +6,14 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.1 })
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className={`footer ${className || ''}`}>
+    <footer 
+      className={`footer animate-on-scroll ${isVisible ? 'visible' : ''} ${className || ''}`}
+      ref={ref}
+    >
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">

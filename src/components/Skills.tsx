@@ -1,123 +1,130 @@
 import { forwardRef } from 'react'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './Skills.css'
 
-interface Skill {
-  name: string
-  level: number
-  category: string
+interface DAppType {
+  title: string
+  description: string
+  icon: React.ReactNode
+  features: string[]
 }
 
 const Skills = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
-  const skills: Skill[] = [
-    // Frontend Technologies
-    { name: "JavaScript/ES6+", level: 95, category: "Frontend" },
-    { name: "TypeScript", level: 90, category: "Frontend" },
-    { name: "React.js 18", level: 95, category: "Frontend" },
-    { name: "Next.js 15", level: 85, category: "Frontend" },
-    { name: "HTML5/CSS3", level: 95, category: "Frontend" },
-    { name: "Tailwind CSS", level: 90, category: "Frontend" },
-    { name: "React-Native", level: 10, category: "Frontend" },
-    
-    // Tools & Others
-    { name: "Git/GitHub", level: 90, category: "Tools" },
-    { name: "Webpack/Vite", level: 85, category: "Tools" },
-    { name: "Jest/Testing Library", level: 80, category: "Tools" },
-    { name: "Figma/Design", level: 75, category: "Tools" },
-    { name: "Vercel", level: 70, category: "Tools" },
-    { name: "PXXL", level: 60, category: "Tools"},
-    { name: "Thirdweb SDK", level: 10, category: "Tools" },
-    { name: "Node.js", level: 70, category: "Backend" },
-    { name: "Next.js server", level: 50, category: "Backend" },
-    { name: "Solidity", level: 30, category: "Backend" },
-    { name: "Hardhat", level: 10, category: "Backend" },
-    { name: "Ethers.js", level: 5, category: "Backend"},
-    { name: "MongoDB", level: 40, category: "Backend" },
-    { name: "Helia/IPFS", level: 40, category: "Backend"}
+  const { ref: observerRef, isVisible } = useIntersectionObserver({ threshold: 0.1 })
+  
+  const dappTypes: DAppType[] = [
+    {
+      title: "DeFi Applications",
+      description: "Decentralized finance platforms for the future of banking",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      features: ["Token Swaps & DEX", "Staking Platforms", "Yield Farming", "Lending Protocols"]
+    },
+    {
+      title: "NFT Marketplaces",
+      description: "Buy, sell, and trade digital assets on the blockchain",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+          <path d="M3 9H21" stroke="currentColor" strokeWidth="2"/>
+          <path d="M9 21V9" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      ),
+      features: ["Minting Platforms", "Auction Systems", "Royalty Management", "Collection Galleries"]
+    },
+    {
+      title: "DAO Platforms",
+      description: "Decentralized governance and community-driven organizations",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="8" r="3" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 11C8.13 11 5 13.13 5 15.75V19H19V15.75C19 13.13 15.87 11 12 11Z" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="18" cy="8" r="2" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="6" cy="8" r="2" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      ),
+      features: ["Voting Systems", "Proposal Management", "Treasury Control", "Member Governance"]
+    },
+    {
+      title: "Web3 Social Platforms",
+      description: "Decentralized social networks with user ownership",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2C16.75 2 21 6.25 21 11.5Z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M22 22L19 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      ),
+      features: ["Token-Gated Content", "Decentralized Identity", "On-Chain Messaging", "Creator Monetization"]
+    },
+    {
+      title: "Gaming & Metaverse",
+      description: "Play-to-earn games and virtual world experiences",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="7" width="20" height="10" rx="2" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="7" cy="12" r="1.5" fill="currentColor"/>
+          <circle cx="17" cy="12" r="1.5" fill="currentColor"/>
+          <path d="M6 7V5C6 3.89543 6.89543 3 8 3H16C17.1046 3 18 3.89543 18 5V7" stroke="currentColor" strokeWidth="2"/>
+        </svg>
+      ),
+      features: ["In-Game Assets", "P2E Mechanics", "Virtual Land", "Character NFTs"]
+    },
+    {
+      title: "Supply Chain & Tracking",
+      description: "Transparent tracking and verification systems",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M3 10H21" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="7" cy="14" r="1" fill="currentColor"/>
+        </svg>
+      ),
+      features: ["Product Authentication", "Logistics Tracking", "Quality Verification", "Provenance Records"]
+    }
   ]
 
-  const categories = ["Frontend", "Tools", "Backend"]
-
   return (
-    <section id="skills" className={`skills ${props.className || ''}`} ref={ref}>
+    <section 
+      id="skills" 
+      className={`skills animate-on-scroll ${isVisible ? 'visible' : ''} ${props.className || ''}`}
+      ref={(node) => {
+        observerRef.current = node
+        if (typeof ref === 'function') ref(node)
+        else if (ref) ref.current = node
+      }}
+    >
       <div className="container">
-        <h2 className="section-title">Skills & Technologies</h2>
+        <h2 className="section-title">What I Can Build For You</h2>
         <p className="section-subtitle">
-          Constantly learning and mastering the latest technologies
+          Specialized in creating cutting-edge decentralized applications across various domains
         </p>
         
         <div className="skills-content">
-          <div className="skills-categories">
-            {categories.map((category) => (
-              <div key={category} className="skill-category">
-                <h3 className="category-title">{category}</h3>
-                <div className="skills-list">
-                  {skills
-                    .filter(skill => skill.category === category)
-                    .map((skill, index) => (
-                      <div key={index} className="skill-item">
-                        <div className="skill-header">
-                          <span className="skill-name">{skill.name}</span>
-                          <span className="skill-percentage">{skill.level}%</span>
-                        </div>
-                        <div className="skill-bar">
-                          <div 
-                            className="skill-progress"
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))
-                  }
+          <div className="dapp-types-grid">
+            {dappTypes.map((dapp, index) => (
+              <div key={index} className="dapp-type-card">
+                <div className="dapp-icon">
+                  {dapp.icon}
                 </div>
+                <h3 className="dapp-title">{dapp.title}</h3>
+                <p className="dapp-description">{dapp.description}</p>
+                <ul className="dapp-features">
+                  {dapp.features.map((feature, idx) => (
+                    <li key={idx}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
-          </div>
-          
-          <div className="experience-section">
-            <h3>Experience Highlights</h3>
-            <div className="experience-cards">
-              <div className="experience-card">
-                <div className="experience-icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 14L8 10L9.41 8.59L12 11.17L14.59 8.59L16 10L12 14Z" fill="var(--icon-color)"/>
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 4L13.5 4.68C13.18 4.84 13 5.18 13 5.5V7.5C13 7.78 13.22 8 13.5 8H15L21 9ZM3 13V15L9 18L10.5 17.32C10.82 17.16 11 16.82 11 16.5V14.5C11 14.22 10.78 14 10.5 14H9L3 13Z" fill="var(--icon-color)"/>
-                  </svg>
-                </div>
-                <h4>Professional Development</h4>
-                <p>10+ months building scalable web applications with modern frameworks and best practices.</p>
-              </div>
-              <div className="experience-card">
-                <div className="experience-icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L13.09 8.26L22 9L13.09 15.74L15.18 22L12 18.27L8.82 22L10.91 15.74L2 9L10.91 8.26L12 2Z" stroke="var(--icon-color)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h4>Performance Optimization</h4>
-                <p>Improved application performance by up to 60% through code optimization and best practices.</p>
-              </div>
-              <div className="experience-card">
-                <div className="experience-icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 21V19H7V21H5V19C5 18.45 5.45 18 6 18H18C18.55 18 19 18.45 19 19V21H17ZM7 16V10C7 6.69 9.69 4 13 4S19 6.69 19 10V16H17V10C17 7.79 15.21 6 13 6S9 7.79 9 10V16H7Z" fill="var(--icon-color)"/>
-                    <circle cx="9" cy="13" r="1" fill="var(--icon-color)"/>
-                    <circle cx="15" cy="13" r="1" fill="var(--icon-color)"/>
-                    <circle cx="17" cy="13" r="1" fill="var(--icon-color)"/>
-                  </svg>
-                </div>
-                <h4>Team Collaboration</h4>
-                <p>Experience working in agile teams, code reviews, and mentoring 5 other junior developers.</p>
-              </div>
-              <div className="experience-card">
-                <div className="experience-icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19Z" fill="var(--icon-color)"/>
-                    <path d="M7 7H17V9H7V7ZM7 11H17V13H7V11ZM7 15H13V17H7V15Z" fill="var(--icon-color)"/>
-                  </svg>
-                </div>
-                <h4>Continuous Learning</h4>
-                <p>Always staying updated with the latest technologies, frameworks, and industry trends.</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

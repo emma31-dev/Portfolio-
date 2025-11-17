@@ -1,9 +1,15 @@
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './Contact.css'
 
 const Contact = () => {
+  const { ref, isVisible } = useIntersectionObserver({ threshold: 0.1 })
 
   return (
-    <section id="contact" className='contact'>
+    <section 
+      id="contact" 
+      className={`contact animate-on-scroll ${isVisible ? 'visible' : ''}`}
+      ref={ref}
+    >
       <div className="container">
         <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">
@@ -12,12 +18,6 @@ const Contact = () => {
         
         <div className="contact-content">
           <div className="contact-info">
-            <p>
-              I'm always interested in hearing about new opportunities, 
-              interesting projects, or just having a chat about web development.
-              My most used socials are here below.
-              See you in my DM and have a lovely day❤️.
-            </p>
             
             <div className="contact-details">
               <div className="contact-item">
@@ -86,6 +86,11 @@ const Contact = () => {
                 
               </a>
             </div>
+            <p>
+              I'm always interested in hearing about new opportunities, 
+              interesting projects, or just having a chat about the tech space.
+              See you in my DM and have a lovely day❤️.
+            </p>
           </div>
         </div>
       </div>

@@ -1,10 +1,11 @@
-import { forwardRef } from 'react'
-import { useEffect, useState } from 'react'
+import { forwardRef, useEffect, useState } from 'react'
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './Hero.css'
 
 const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) => {
+  const { ref: observerRef, isVisible } = useIntersectionObserver({ threshold: 0.1 })
   const [text, setText] = useState('')
-  const fullText = 'Frontend Developer'
+  const fullText = 'Frontend DApp Developer'
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
@@ -18,7 +19,16 @@ const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) 
   }, [index, fullText])
 
   return (
-    <section id="home" className="hero" ref={ref} {...props}>
+    <section 
+      id="home" 
+      className={`hero animate-on-scroll ${isVisible ? 'visible' : ''}`} 
+      ref={(node) => {
+        observerRef.current = node
+        if (typeof ref === 'function') ref(node)
+        else if (ref) ref.current = node
+      }} 
+      {...props}
+    >
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -28,8 +38,7 @@ const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) 
             {text}<span className="cursor">|</span>
           </h2>
           <p className="hero-description">
-            A passionate frontend developer who loves building beautiful, responsive, 
-            and interactive web experiences.
+            Shipped 4+ live web apps with 100+ users. Tech Founder and Innovator
           </p>
           <div className="hero-buttons">
             <a href="#projects" className="btn btn-primary">View My Work</a>

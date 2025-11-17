@@ -4,11 +4,25 @@
   padding: 60px 0 30px;
 }
 
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 3rem;
   margin-bottom: 3rem;
+  opacity: 0;
+  animation: slideUpFade 0.5s ease-out forwards;
+  animation-delay: 0.2s;
 }
 
 .footer-section h3 {
@@ -83,6 +97,9 @@
   padding-top: 2rem;
   text-align: center;
   color: var(--text-tertiary);
+  opacity: 0;
+  animation: slideUpFade 0.5s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 .footer-bottom p {

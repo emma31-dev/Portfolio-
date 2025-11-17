@@ -3,158 +3,122 @@
   background: var(--bg-primary);
 }
 
+.skills .section-title,
+.skills .section-subtitle {
+  opacity: 0;
+  animation: slideUpFade 0.5s ease-out forwards;
+}
+
+.skills .section-title { animation-delay: 0.1s; }
+.skills .section-subtitle { animation-delay: 0.2s; }
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .skills-content {
   margin-top: 3rem;
 }
 
-.skills-categories {
+.dapp-types-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.skill-category {
+.dapp-type-card {
   background: var(--bg-secondary);
   padding: 2rem;
   border-radius: 16px;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.category-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  text-align: center;
-  position: relative;
-}
-
-.category-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-  border-radius: 2px;
-}
-
-.skills-list {
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: slideUpFade 0.5s ease-out forwards;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.skill-item {
+.dapp-type-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px var(--shadow);
+  border-color: var(--gradient-start);
+}
+
+.dapp-icon {
+  width: 80px;
+  height: 80px;
   background: var(--bg-primary);
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px var(--shadow);
-  transition: transform 0.3s ease;
-}
-
-.skill-item:hover {
-  transform: translateY(-2px);
-}
-
-.skill-header {
+  border-radius: 50%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: var(--gradient-start);
+  transition: all 0.3s ease;
+}
+
+.dapp-type-card:hover .dapp-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+}
+
+.dapp-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
   margin-bottom: 0.5rem;
 }
 
-.skill-name {
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.skill-percentage {
-  font-size: 0.875rem;
-  color: var(--gradient-start);
-  font-weight: 600;
-}
-
-.skill-bar {
-  width: 100%;
-  height: 8px;
-  background-color: var(--bg-tertiary);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 100%;
-  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-  border-radius: 4px;
-  transition: width 1.5s ease-in-out;
-  animation: fillBar 1.5s ease-in-out;
-}
-
-.experience-section {
-  margin-top: 3rem;
-}
-
-.experience-section h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.experience-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.experience-card {
-  background: var(--bg-primary);
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px var(--shadow);
-  text-align: center;
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.experience-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px var(--shadow);
-}
-
-.experience-icon {
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1rem auto;
-  background: var(--bg-secondary);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.experience-card:hover .experience-icon {
-  transform: scale(1.1);
-  background: var(--bg-tertiary);
-}
-
-.experience-card h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-.experience-card p {
+.dapp-description {
   color: var(--text-secondary);
+  text-align: center;
+  font-size: 0.95rem;
   line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.dapp-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dapp-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dapp-features li:hover {
+  background: var(--bg-tertiary);
+  transform: translateX(5px);
+}
+
+.dapp-features li svg {
+  flex-shrink: 0;
+  color: var(--gradient-start);
+  stroke-width: 3;
 }
 
 /* Animations */
@@ -176,14 +140,12 @@
 }
 
 /* Add staggered animation delays */
-.skill-category:nth-child(1) { animation-delay: 0.1s; }
-.skill-category:nth-child(2) { animation-delay: 0.2s; }
-.skill-category:nth-child(3) { animation-delay: 0.3s; }
-
-.experience-card:nth-child(1) { animation-delay: 0.1s; }
-.experience-card:nth-child(2) { animation-delay: 0.2s; }
-.experience-card:nth-child(3) { animation-delay: 0.3s; }
-.experience-card:nth-child(4) { animation-delay: 0.4s; }
+.dapp-type-card:nth-child(1) { animation-delay: 0.2s; }
+.dapp-type-card:nth-child(2) { animation-delay: 0.3s; }
+.dapp-type-card:nth-child(3) { animation-delay: 0.4s; }
+.dapp-type-card:nth-child(4) { animation-delay: 0.5s; }
+.dapp-type-card:nth-child(5) { animation-delay: 0.6s; }
+.dapp-type-card:nth-child(6) { animation-delay: 0.7s; }
 
 /* Mobile styles */
 @media (max-width: 768px) {
@@ -191,21 +153,25 @@
     padding: 60px 0;
   }
   
-  .skills-categories {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .experience-cards {
+  .dapp-types-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .skill-category {
+  .dapp-type-card {
     padding: 1.5rem;
   }
   
-  .experience-card {
-    padding: 1.5rem;
+  .dapp-icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .dapp-title {
+    font-size: 1.25rem;
+  }
+  
+  .dapp-description {
+    font-size: 0.9rem;
   }
 }
