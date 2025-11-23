@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Emmanuel Fidel</h3>
-            <p>Frontend Developer passionate about creating exceptional user experiences.</p>
+            <p>Frontend DApp Developer passionate about creating exceptional user experiences.</p>
             <div className="social-links">
               <a href="https://github.com/emma31-dev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -49,7 +49,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
               <li><a href="#home">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#projects">Projects</a></li>
-              <li><a href="#skills">Skills</a></li>
+              <li><a href="#skills">Builds</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -58,10 +58,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             <h4>Services</h4>
             <ul>
               <li>Frontend Development</li>
-              <li>React Applications</li>
+              <li>React/Nextjs Applications</li>
               <li>UI/UX Implementation</li>
               <li>Performance Optimization</li>
-              <li>Responsive Design</li>
+              <li>Web3 Applications</li>
             </ul>
           </div>
           
@@ -81,7 +81,6 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         
         <div className="footer-bottom">
           <p>&copy; {currentYear} Emmanuel Fidel. All rights reserved.</p>
-          <p>Built with ❤️ using React 18 & TypeScript</p>
         </div>
       </div>
     </footer>

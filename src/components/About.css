@@ -12,66 +12,52 @@
 .about .section-title { animation-delay: 0.1s; }
 .about .section-subtitle { animation-delay: 0.2s; }
 
-@keyframes slideUpFade {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.about .about-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* About Content */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: stretch;
+  margin-top: 3rem;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about .about-content .left {
-  width: 50%;
+.about-text {
+  opacity: 0;
+  animation: slideUpFade 0.5s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
-.about .about-content .left h2 {
-  font-size: 40px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.about .about-content .left p {
-  font-size: 16px;
+.about-paragraph {
+  font-size: 1.125rem;
+  font-weight: 400;
   color: var(--text-secondary);
-  margin: 20px 0;
+  margin-bottom: 1.5rem;
+  padding: 0 40px;
+  line-height: 1.7;
 }
 
-.about .about-content .left .btn {
-  display: inline-block;
-  background: var(--gradient);
-  color: var(--text-primary);
-  font-size: 16px;
-  font-weight: 500;
-  padding: 10px 30px;
-  margin-top: 20px;
-  border-radius: 40px;
-  transition: 0.3s;
+.about-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: slideUpFade 0.5s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
-.about .about-content .left .btn:hover {
-  background: var(--gradient-hover);
-}
-
-.about .about-content .right {
-  width: 40%;
-  text-align: center;
-}
-
-.about .about-content .right img {
+.about-image img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+  object-fit: cover;
 }
 
-/* Testimonials Section Styles */
+/* Testimonials */
 .testimonial-section {
   margin-top: 4rem;
   padding: 3rem 0;
@@ -114,7 +100,6 @@
   border-radius: 16px;
   padding: 3rem 2.5rem;
   box-shadow: 0 10px 30px var(--shadow);
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -217,68 +202,7 @@
   border-radius: 6px;
 }
 
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: stretch;
-  margin-top: 3rem;
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about-text {
-  opacity: 0;
-  animation: slideUpFade 0.5s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-.about-paragraph {
-  font-size: 1.125rem;
-  font-weight: 400;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  padding: 0 40px 0 40px;
-  line-height: 1.7;
-}
-
-.about-image {
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  animation: slideUpFade 0.5s ease-out forwards;
-  animation-delay: 0.4s;
-  align-items: stretch;
-}
-
-/* Animations */
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Mobile styles */
-
-
-/* Journey Section Styles */
+/* Journey Section */
 .journey-section {
   margin-top: 4rem;
   opacity: 0;
@@ -333,29 +257,6 @@
   margin-bottom: 1rem;
 }
 
-.journey-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.journey-card li {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-  position: relative;
-  padding-left: 1rem;
-}
-
-.journey-card li::before {
-  content: '•';
-  color: var(--accent-color);
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-
 .journey-card p {
   color: var(--text-secondary);
   font-size: 0.95rem;
@@ -363,96 +264,57 @@
   margin: 0;
 }
 
-/* Large screens */
+/* Responsive */
 @media (min-width: 1400px) {
   .about-content {
     gap: 6rem;
   }
   
-  .about-card {
-    max-width: 400px;
-    padding: 3rem;
-    height: 100%;
-  }
-  
-  .about-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
   .journey-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
     max-width: 1000px;
+    gap: 2.5rem;
   }
 }
 
-/* Medium-large screens */
 @media (min-width: 992px) and (max-width: 1399px) {
   .about-content {
     gap: 5rem;
   }
-  
-  .about-card {
-    max-width: 380px;
-    padding: 2.75rem;
-    height: 100%;
-  }
-  
-  .about-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
-/* Tablet */
 @media (max-width: 991px) {
   .about-content {
     grid-template-columns: 1fr;
     gap: 3rem;
-    text-align: center;
-  }
-  
-  .about-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .about {
     padding: 60px 0;
   }
   
   .about-content {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 3rem;
-    text-align: center;
-  }
-  
-  .about-stats {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
   }
-  
-  .stat-number {
-    font-size: 2rem;
+
+  .about-text {
+    order: 2;
   }
-  
-  .about-card {
-    max-width: 100%;
-    padding: 2rem;
+
+  .about-image {
+    order: 1;
+  }
+
+  .about-image img {
+    max-width: 300px;
+  }
+
+  .about-paragraph {
+    font-size: 0.95rem;
+    padding: 0 20px;
+    line-height: 1.6;
   }
   
   .journey-grid {
@@ -460,7 +322,15 @@
   }
   
   .journey-card {
-    padding: 1rem;
+    padding: 1.5rem;
+  }
+
+  .journey-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .journey-card p {
+    font-size: 0.9rem;
   }
   
   .journey-icon {
@@ -468,7 +338,7 @@
   }
   
   .testimonial-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     margin-bottom: 2rem;
   }
   
@@ -486,7 +356,16 @@
   }
   
   .testimonial-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .author-info h4 {
     font-size: 1rem;
+  }
+
+  .author-info span {
+    font-size: 0.85rem;
   }
   
   .quote-icon svg {

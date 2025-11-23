@@ -20,13 +20,13 @@ const Navbar: React.FC = () => {
             Home
           </a>
           <a href="#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-            About me
+            About
           </a>
           <a href="#projects" className="nav-link" onClick={() => setIsMenuOpen(false)}>
             Projects
           </a>
           <a href="#skills" className="nav-link" onClick={() => setIsMenuOpen(false)}>
-            Skills
+            Builds
           </a>
           <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
             Contact
