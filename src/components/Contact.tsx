@@ -18,12 +18,26 @@ const Contact = () => {
             <h3>Ready to Build Something Amazing?</h3>
             <p>Let's turn your ideas into reality. I'm available for freelance projects, full-time opportunities, and consulting work.</p>
             <div className="cta-buttons">
-              <a href="mailto:emmanuelfidel07@gmail.com?subject=Let's Work Together" className="btn btn-primary btn-large">
+              <a href="https://calendly.com/emmanuelfidel07" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-large">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M16 2V6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M8 2V6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M3 10H21" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M8 14H8.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M12 14H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M16 14H16.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M8 18H8.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M12 18H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                Book Appointment
+              </a>
+              <a href="mailto:emmanuelfidel07@gmail.com?subject=Let's Work Together" className="btn btn-secondary btn-large">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   <path d="M22 6L12 13L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                Hire Me
+                Email Me
               </a>
               <a href="https://wa.me/2349125913571?text=Hi%20Emmanuel,%20I'd%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-large">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -321,6 +321,84 @@
   max-height: calc(85vh - 250px);
 }
 
+/* Analytics Section */
+.modal-analytics {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+}
+
+.modal-analytics h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-analytics h3 svg {
+  color: var(--gradient-start);
+  flex-shrink: 0;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.analytics-stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.analytics-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px var(--shadow);
+  border-color: var(--gradient-start);
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.stat-icon svg {
+  color: white;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
 .modal-section {
   margin-bottom: 2rem;
 }
@@ -384,6 +462,42 @@
   .modal-body {
     padding: 1.5rem;
     max-height: calc(90vh - 220px);
+  }
+
+  .modal-analytics {
+    padding: 1rem;
+  }
+
+  .modal-analytics h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .analytics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .analytics-stat {
+    padding: 0.75rem;
+  }
+
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stat-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
   }
 
   .modal-section h3 {
