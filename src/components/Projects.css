@@ -29,7 +29,7 @@
   scroll-behavior: smooth;
   gap: 24px;
   scrollbar-width: thin;
-  scrollbar-color: var(--gradient-start) var(--bg-secondary);
+  scrollbar-color: var(--accent) var(--bg-secondary);
   padding: 10px 0;
 }
 
@@ -43,12 +43,12 @@
 }
 
 .carousel-container::-webkit-scrollbar-thumb {
-  background: var(--gradient-start);
+  background: var(--accent);
   border-radius: 10px;
 }
 
 .carousel-container::-webkit-scrollbar-thumb:hover {
-  background: var(--gradient-end);
+  background: var(--accent-hover);
 }
 
 .project-card {
@@ -132,8 +132,8 @@
   width: 100%;
   padding: 0.75rem;
   background: transparent;
-  border: 2px solid var(--gradient-start);
-  color: var(--gradient-start);
+  border: 2px solid var(--accent);
+  color: var(--accent);
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
@@ -142,8 +142,8 @@
 }
 
 .btn-more-details:hover {
-  background: var(--gradient-start);
-  color: white;
+  background: var(--accent);
+  color: var(--bg-primary);
   transform: translateY(-2px);
 }
 
@@ -165,8 +165,8 @@
 }
 
 .project-tech span:hover {
-  background: var(--gradient-start);
-  color: white;
+  background: var(--accent);
+  color: var(--bg-primary);
   transform: translateY(-2px);
 }
 
@@ -287,8 +287,8 @@
 }
 
 .modal-close:hover {
-  background: var(--gradient-start);
-  color: white;
+  background: var(--accent);
+  color: var(--bg-primary);
   transform: rotate(90deg) scale(1.05);
 }
 
@@ -345,7 +345,7 @@
 }
 
 .modal-analytics h3 svg {
-  color: var(--gradient-start);
+  color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -369,7 +369,7 @@
 .analytics-stat:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px var(--shadow);
-  border-color: var(--gradient-start);
+  border-color: var(--accent);
 }
 
 .stat-icon {
@@ -378,13 +378,13 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background: var(--accent);
   border-radius: 10px;
   flex-shrink: 0;
 }
 
 .stat-icon svg {
-  color: white;
+  color: var(--bg-primary);
 }
 
 .stat-content {
@@ -422,7 +422,7 @@
 }
 
 .modal-section h3 svg {
-  color: var(--gradient-start);
+  color: var(--accent);
   flex-shrink: 0;
 }
 

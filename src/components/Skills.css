@@ -40,7 +40,7 @@
 .dapp-type-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px var(--shadow);
-  border-color: var(--gradient-start);
+  border-color: var(--accent);
 }
 
 .dapp-icon {
@@ -52,14 +52,14 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
-  color: var(--gradient-start);
+  color: var(--accent);
   transition: all 0.3s ease;
 }
 
 .dapp-type-card:hover .dapp-icon {
   transform: scale(1.1) rotate(5deg);
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-  color: white;
+  background: var(--accent);
+  color: var(--bg-primary);
 }
 
 .dapp-title {
@@ -106,7 +106,7 @@
 
 .dapp-features li svg {
   flex-shrink: 0;
-  color: var(--gradient-start);
+  color: var(--accent);
   stroke-width: 3;
 }
 

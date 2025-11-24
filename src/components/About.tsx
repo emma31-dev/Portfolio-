@@ -49,18 +49,34 @@ const About = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
         <h2 className="section-title">About Me</h2>
         <div className="about-content">
           <div className="about-text">
-            <p className="about-paragraph">
-              I am a tech founder and innovator in the tech space. I have built on both web2 and web3 and picked up a few tools.
-              I have shipped multiple web apps and dapps as well including my recent founding of <strong>Klaim</strong> a decentralized IP store for large date corpations discussed below.
-              I also developed <strong>Docspice</strong> a article generation webapp that generate article images for you discussed below.
+            <p className="about-paragraph about-intro">
+              I'm 17, and I've already built applications serving hundreds of users. While others my age are still learning syntax, I'm shipping production code.
             </p>
-            <p className="about-paragraph">
-              I have also displayed leadership skills leading 3 hackathons, one physical and 2 virtual. I have also been a mentor and coach for 3 startups.
-              I have also been a mentor for 3 startups.
+            
+            <div className="about-highlights">
+              <h4 className="about-subheading">What I've Built:</h4>
+              <ul className="about-list">
+                <li><strong>Klaim</strong> — Decentralized marketplace for research data IP</li>
+                <li><strong>Docspice</strong> — AI-powered article generator (1,000+ articles processed)</li>
+                <li><strong>Reactive News</strong> — Real-time crypto news platform (500+ daily users)</li>
+              </ul>
+            </div>
+
+            <div className="about-highlights">
+              <h4 className="about-subheading">Leadership & Impact:</h4>
+              <ul className="about-list">
+                <li>Led 3 hackathons (1 physical, 2 virtual)</li>
+                <li>Mentored 3 startups from concept to launch</li>
+                <li>Ship fast, iterate faster, build what users want</li>
+              </ul>
+            </div>
+
+            <p className="about-paragraph about-cta">
+              <strong>Age is just a number when you deliver results.</strong> Need a full-stack dApp, smart contract architecture, or someone who codes like their future depends on it? Let's build something that matters.
             </p>
           </div>
           <div className="about-image">
-            <img src="https://pbs.twimg.com/profile_images/1970977337165365248/Ae0Fa8jv.jpg" alt="Emmanuel's Picture" />
+            <img src="/picture.jpg" alt="Emmanuel's Picture" />
           </div>
         </div>
         <div className="testimonial-section">
@@ -140,8 +156,7 @@ const About = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
               </div>
               <h3>What Drives Me</h3>
               <p>
-                I build because waiting for permission is slower than shipping code. 
-                Those late night coding sessions will not go to waste as i build the future of web3
+                At 17, I don't have decades of experience—but I have something better: hunger. While I'm learning faster than most, I'm also building faster. Every project is a chance to prove that talent isn't about age, it's about execution.
               </p>
             </div>
             
@@ -155,7 +170,7 @@ const About = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
               </div>
               <h3>Vision</h3>
               <p>
-                To become a standout developer who builds tools that aren't just useful but used by users around the world. 
+                By the time I'm 25, I want to have built tools used by millions. I'm not waiting for permission or the "right time"—I'm building now, learning from real users, and scaling one deployment at a time. The future belongs to those who build it.
               </p>
             </div>
           </div>

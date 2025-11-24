@@ -2,33 +2,29 @@
 
 /* CSS Variables for Light/Dark Mode */
 :root {
-  --bg-primary: #fff;
+  --bg-primary: #ffffff;
   --bg-secondary: #f5f5f5;
-  --bg-hero: linear-gradient(225deg,#ccc, #f5f5f5, #f5f5f5, #f5f5f5, #f5f5f5, #f5f5f5, #ccc);
-  --bg-tertiary: #f9f9f9;
+  --bg-tertiary: #fafafa;
   --text-primary: #000000;
-  --text-secondary: #3f3f3f;
+  --text-secondary: #404040;
   --text-tertiary: #666666;
-  --border-color: rgba(0, 0, 0, 0.1);
-  --shadow: rgba(0, 0, 0, 0.1);
-  --gradient-start: #333333;
-  --gradient-end: #000000;
-  --icon-color: #666666;
+  --border-color: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --accent: #000000;
+  --accent-hover: #333333;
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0f0f0f;
-  --bg-secondary: #444444;
-  --bg-hero: linear-gradient(225deg, #333, #1a1a1a, #1a1a1a, #1a1a1a, #1a1a1a, #1a1a1a, #333);
-  --bg-tertiary: #333333;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
   --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --text-tertiary: #cccccc;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --shadow: rgba(255, 255, 255, 0.1);
-  --gradient-start: #808080;
-  --gradient-end: #a0a0a0;
-  --icon-color: #cccccc;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #808080;
+  --border-color: #333333;
+  --shadow: rgba(255, 255, 255, 0.05);
+  --accent: #ffffff;
+  --accent-hover: #cccccc;
 }
 
 /* Global Styles */
@@ -74,7 +70,7 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--accent);
   border-radius: 2px;
 }
 
@@ -105,27 +101,27 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-  color: white;
+  background: var(--accent);
+  color: var(--bg-primary);
   z-index: 3000;
 }
 
 .btn-primary:hover {
-  color: #cccccc;
+  background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(100, 100, 100, 0.4);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--gradient-start);
-  border: 2px solid var(--gradient-start);
+  color: var(--accent);
+  border: 2px solid var(--accent);
   z-index: 1000;
 }
 
 .btn-secondary:hover {
-  background: var(--gradient-start);
-  color: white;
+  background: var(--accent);
+  color: var(--bg-primary);
   transform: translateY(-2px);
 }
 

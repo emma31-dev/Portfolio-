@@ -12,9 +12,9 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <div className="nav-logo">
-          <a href="#home">Emmanuel</a>
-        </div>
+        <a href="#" className="nav-hire-btn">
+          Hire Me
+        </a>
         <div className={isMenuOpen ? "nav-menu active" : "nav-menu"}>
           <a href="#home" className="nav-link" onClick={() => setIsMenuOpen(false)}>
             Home

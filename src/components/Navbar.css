@@ -24,15 +24,22 @@
   gap: 2rem;
 }
 
-.nav-logo a {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
+.nav-hire-btn {
+  padding: 0.6rem 1.5rem;
+  background: var(--accent);
+  color: var(--bg-primary);
   text-decoration: none;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-hire-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .nav-menu {
@@ -51,7 +58,7 @@
 }
 
 .nav-link:hover {
-  color: var(--gradient-start);
+  color: var(--accent);
 }
 
 .nav-link::after {
@@ -61,7 +68,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  background: var(--accent);
   transition: width 0.3s ease;
 }
 

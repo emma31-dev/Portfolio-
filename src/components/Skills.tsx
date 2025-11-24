@@ -62,29 +62,30 @@ const Skills = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
       features: ["Token-Gated Content", "Decentralized Identity", "On-Chain Messaging", "Creator Monetization"]
     },
     {
-      title: "Gaming & Metaverse",
-      description: "Play-to-earn games and virtual world experiences",
+      title: "Portfolio Websites",
+      description: "Modern, responsive portfolios that showcase your work",
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="7" width="20" height="10" rx="2" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="7" cy="12" r="1.5" fill="currentColor"/>
-          <circle cx="17" cy="12" r="1.5" fill="currentColor"/>
-          <path d="M6 7V5C6 3.89543 6.89543 3 8 3H16C17.1046 3 18 3.89543 18 5V7" stroke="currentColor" strokeWidth="2"/>
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+          <path d="M3 9H21" stroke="currentColor" strokeWidth="2"/>
+          <path d="M9 3V9" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="8" cy="15" r="2" stroke="currentColor" strokeWidth="2"/>
+          <path d="M14 13L18 17M18 13L14 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       ),
-      features: ["In-Game Assets", "P2E Mechanics", "Virtual Land", "Character NFTs"]
+      features: ["Custom Design", "Performance Optimized", "SEO Ready", "Mobile Responsive"]
     },
     {
-      title: "Supply Chain & Tracking",
-      description: "Transparent tracking and verification systems",
+      title: "E-commerce Platforms",
+      description: "Full-featured online stores with payment integration",
       icon: (
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18H19C20.1046 18 21 17.1046 21 16Z" stroke="currentColor" strokeWidth="2"/>
-          <path d="M3 10H21" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="7" cy="14" r="1" fill="currentColor"/>
+          <path d="M9 2L1 6V18L9 22L17 18L23 21V9L17 6L9 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 22V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M17 18V6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       ),
-      features: ["Product Authentication", "Logistics Tracking", "Quality Verification", "Provenance Records"]
+      features: ["Shopping Cart", "Payment Gateway", "Inventory Management", "Order Tracking"]
     }
   ]
 

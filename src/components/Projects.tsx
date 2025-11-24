@@ -13,6 +13,7 @@ interface Project {
   image: string
   details: {
     problem: string
+    approach: string
     solution: string
     result: string
   }
@@ -40,6 +41,7 @@ const Projects = () => {
       image: "/Klaim.png",
       details: {
         problem: "Research institutions and individual researchers struggle to monetize their valuable data IP. Traditional systems lack transparency, have high transaction costs, and don't provide clear ownership tracking. Data buyers face challenges verifying authenticity and provenance of research data.",
+        approach: "Started with user research interviewing 15+ researchers to understand pain points. Prototyped the smart contract architecture first, then built the frontend iteratively. Prioritized security audits and gas optimization. Launched MVP in 3 weeks during hackathon, then refined based on early user feedback.",
         solution: "Klaim provides a decentralized marketplace where researchers can tokenize their data IP as NFTs. Smart contracts automate licensing agreements and royalty distributions. IPFS ensures data integrity and availability. Blockchain technology provides transparent ownership records and immutable transaction history.",
         result: "Successfully launched on testnet with 50+ research data listings. Reduced transaction costs by 70% compared to traditional IP licensing. Enabled instant, trustless transactions between researchers and institutions. Built during a hackathon and continuing development for mainnet launch."
       },
@@ -60,6 +62,7 @@ const Projects = () => {
       image: "/Docspice.png",
       details: {
         problem: "Content creators spend hours designing article cover images and formatting content. Many lack design skills or access to professional tools. Manual image creation is time-consuming and inconsistent across articles.",
+        approach: "Built MVP in 2 weeks focusing on core text-to-image generation. Used agile sprints with weekly user testing sessions. Integrated AI incrementally—started with template-based generation, then added ML for context analysis. Optimized Canvas rendering for performance. Launched on Product Hunt for rapid user acquisition and feedback.",
         solution: "Docspice uses AI to analyze article text and automatically generate contextually relevant cover images. The Canvas API creates custom layouts with proper typography and visual hierarchy. Users simply paste their text and get a publication-ready article with professional imagery in seconds.",
         result: "Processed 1,000+ articles for 200+ users. Reduced article preparation time from 2 hours to 5 minutes. 95% user satisfaction rate. Featured on Product Hunt with 150+ upvotes. Continuing to add more templates and AI capabilities."
       },
@@ -80,6 +83,7 @@ const Projects = () => {
       image: "/Reactive.png",
       details: {
         problem: "Crypto traders need real-time, reliable news to make informed decisions. Traditional news platforms have delays and lack integration with on-chain data. Users want to verify news authenticity and track market impact in real-time.",
+        approach: "Hackathon project built in 48 hours with focus on speed and reliability. Architected reactive smart contracts first for event-driven updates. Implemented WebSocket connections for real-time data streaming. Used Next.js 15 for optimal performance. Deployed on decentralized infrastructure for censorship resistance. Post-hackathon: added monitoring, scaled infrastructure, and onboarded beta users.",
         solution: "Built a reactive news aggregator that uses smart contracts to trigger updates based on on-chain events. Integrated CoinGecko API for live price data. WalletConnect enables users to set personalized alerts. Reactive smart contracts automatically fetch and verify news from multiple sources.",
         result: "Secured 4th place in Reactive Network Hackathon. Achieved sub-second news updates. 500+ daily active users during beta. 99.9% uptime with decentralized architecture. Planning to add more data sources and advanced analytics features."
       },
@@ -100,6 +104,7 @@ const Projects = () => {
       image: "/Portfolio.png",
       details: {
         problem: "Needed a professional online presence to showcase projects and skills. Generic portfolio templates don't stand out. Wanted to demonstrate technical abilities through the portfolio itself.",
+        approach: "Designed mobile-first with focus on performance and accessibility. Built component library from scratch for full control. Implemented progressive enhancement—core content loads first, animations enhance experience. Used Intersection Observer for efficient scroll animations. Iterated on design based on feedback from 10+ developers and designers. Optimized bundle size and implemented code splitting for fast loads.",
         solution: "Built a custom portfolio from scratch using modern web technologies. Implemented Intersection Observer for progressive animations. Created a responsive design with dark mode support. Optimized for performance with lazy loading and code splitting. Added interactive elements and smooth transitions.",
         result: "Achieved 95+ Lighthouse performance score. Fully responsive across all devices. Smooth 60fps animations. Fast load times under 2 seconds. Successfully showcases technical skills and projects to potential employers and clients."
       },
@@ -253,10 +258,20 @@ const Projects = () => {
               <div className="modal-section">
                 <h3>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  My Approach
+                </h3>
+                <p>{selectedProject.details.approach}</p>
+              </div>
+
+              <div className="modal-section">
+                <h3>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 12L11 14L15 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
                   </svg>
-                  Our Solution
+                  Solution
                 </h3>
                 <p>{selectedProject.details.solution}</p>
               </div>

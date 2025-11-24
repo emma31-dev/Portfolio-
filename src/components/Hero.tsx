@@ -38,7 +38,7 @@ const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) 
             {text}<span className="cursor">|</span>
           </h2>
           <p className="hero-description">
-            Shipped 4+ live web apps with 100+ users. Tech Founder and Freelancer.
+            Building production-ready Web3 applications that drive real user engagement. 4+ live dApps serving 100+ active users.
           </p>
           <div className="hero-buttons">
             <a href="https://calendly.com/emmanuelfidel07" target="_blank" rel="noopener noreferrer" className="btn btn-primary">

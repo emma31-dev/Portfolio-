@@ -17,7 +17,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: stretch;
+  align-items: start;
   margin-top: 3rem;
   max-width: 1500px;
   margin-left: auto;
@@ -28,6 +28,9 @@
   opacity: 0;
   animation: slideUpFade 0.5s ease-out forwards;
   animation-delay: 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .about-paragraph {
@@ -39,22 +42,98 @@
   line-height: 1.7;
 }
 
+.about-intro {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.about-highlights {
+  margin-bottom: 2rem;
+  padding: 0 40px;
+}
+
+.about-subheading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-subheading::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-list li {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.about-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.about-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-cta {
+  background: var(--bg-secondary);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 40px 0;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+.about-cta strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
 .about-image {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   opacity: 0;
   animation: slideUpFade 0.5s ease-out forwards;
   animation-delay: 0.4s;
+  height: 100%;
 }
 
 .about-image img {
   width: 100%;
-  max-width: 400px;
-  height: auto;
+  max-width: 450px;
+  min-height: 100%;
   border-radius: 16px;
   box-shadow: 0 10px 30px var(--shadow);
   object-fit: cover;
+  object-position: center;
 }
 
 /* Testimonials */
@@ -106,7 +185,7 @@
 }
 
 .quote-icon {
-  color: var(--gradient-start);
+  color: var(--accent);
   opacity: 0.3;
   display: flex;
   justify-content: center;
@@ -163,9 +242,9 @@
 }
 
 .carousel-btn:hover {
-  background: var(--gradient-start);
-  border-color: var(--gradient-start);
-  color: white;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-primary);
   transform: scale(1.1);
 }
 
@@ -197,7 +276,7 @@
 }
 
 .carousel-dot.active {
-  background: var(--gradient-start);
+  background: var(--accent);
   width: 32px;
   border-radius: 6px;
 }
@@ -315,6 +394,31 @@
     font-size: 0.95rem;
     padding: 0 20px;
     line-height: 1.6;
+  }
+
+  .about-intro {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-highlights {
+    padding: 0 20px;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-subheading {
+    font-size: 1rem;
+  }
+
+  .about-list li {
+    font-size: 0.95rem;
+    padding-left: 1.5rem;
+  }
+
+  .about-cta {
+    margin: 1.5rem 20px 0;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
   }
   
   .journey-grid {

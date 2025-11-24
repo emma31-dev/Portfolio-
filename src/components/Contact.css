@@ -6,26 +6,28 @@
 /* Hire Me CTA */
 .hire-me-cta {
   margin-top: 0;
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background: var(--accent);
   border-radius: 16px;
   padding: 3rem;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 60px var(--shadow);
   animation: slideUpFade 0.5s ease-out forwards;
   animation-delay: 0.2s;
   opacity: 0;
+  border: 2px solid var(--accent);
 }
 
 .cta-content h3 {
   font-size: 2rem;
-  color: white;
+  color: var(--bg-primary);
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .cta-content p {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--bg-primary);
+  opacity: 0.9;
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -60,26 +62,27 @@
 }
 
 .cta-buttons .btn-primary {
-  background: white;
-  color: var(--gradient-start);
-  border: 2px solid white;
+  background: var(--bg-primary);
+  color: var(--accent);
+  border: 2px solid var(--bg-primary);
 }
 
 .cta-buttons .btn-primary:hover {
   background: transparent;
-  color: white;
+  color: var(--bg-primary);
+  border-color: var(--bg-primary);
   transform: translateY(-3px);
 }
 
 .cta-buttons .btn-secondary {
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--bg-primary);
+  border: 2px solid var(--bg-primary);
 }
 
 .cta-buttons .btn-secondary:hover {
-  background: white;
-  color: var(--gradient-start);
+  background: var(--bg-primary);
+  color: var(--accent);
   transform: translateY(-3px);
 }
 
@@ -95,12 +98,12 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: white;
+  color: var(--bg-primary);
   font-weight: 500;
 }
 
 .cta-feature svg {
-  color: white;
+  color: var(--bg-primary);
   stroke-width: 3;
 }
 
@@ -119,17 +122,17 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border: 2px solid var(--bg-primary);
   border-radius: 50%;
-  color: white;
+  color: var(--bg-primary);
   text-decoration: none;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
 }
 
 .hire-me-cta .social-links a:hover {
-  background: white;
-  color: var(--gradient-start);
+  background: var(--bg-primary);
+  color: var(--accent);
   transform: translateY(-3px) scale(1.1);
 }
 
