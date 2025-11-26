@@ -50,7 +50,7 @@ const About = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
         <div className="about-content">
           <div className="about-text">
             <p className="about-paragraph about-intro">
-              I'm 17, and I've already built applications serving hundreds of users. While others my age are still learning syntax, I'm shipping production code.
+              I've already built applications serving hundreds of users. While others my age are still learning syntax, I'm shipping production code.
             </p>
             
             <div className="about-highlights">
