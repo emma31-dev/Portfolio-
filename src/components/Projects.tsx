@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
 import './Projects.css'
@@ -28,6 +28,13 @@ interface Project {
 const Projects = () => {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.1 })
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const modalRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (selectedProject && modalRef.current) {
+      modalRef.current.focus()
+    }
+  }, [selectedProject])
   
   // Projects array
   const projects: Project[] = [
@@ -36,8 +43,8 @@ const Projects = () => {
       title: "Klaim",
       description: "A decentralized marketplace for research data IP built on blockchain technology.",
       technologies: ["Next.js", "Solidity", "Ethers.js", "IPFS", "Web3"],
-      github: "https://github.com/emma31-dev/klaim",
-      demo: "https://klaim.vercel.app",
+      github: "https://github.com/DynamicHQ/Klaim",
+      demo: "https://klaim-1.onrender.com",
       image: "/Klaim.png",
       details: {
         problem: "Research institutions and individual researchers struggle to monetize their valuable data IP. Traditional systems lack transparency, have high transaction costs, and don't provide clear ownership tracking. Data buyers face challenges verifying authenticity and provenance of research data.",
@@ -164,7 +171,12 @@ const Projects = () => {
 
       {/* Project Details Modal - Rendered via Portal */}
       {selectedProject && createPortal(
-        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+        <div 
+          className="modal-overlay" 
+          onClick={() => setSelectedProject(null)}
+          ref={modalRef}
+          tabIndex={-1}
+        >
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setSelectedProject(null)}>
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

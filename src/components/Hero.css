@@ -2,7 +2,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--bg-hero);
+  background: var(--bg-secondary);
   padding-top: 0px;
   position: relative;
   overflow: hidden;
