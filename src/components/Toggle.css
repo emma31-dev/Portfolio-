@@ -1,8 +1,8 @@
 .dark-mode-toggle {
   display: flex;
   position: fixed;
-  right: 40px;
-  top: 18px;
+  right: 20px;
+  top: 16px;
   align-items: center;
   background: transparent;
   cursor: pointer;
@@ -50,4 +50,9 @@
   transform: translateX(24px);
   background: var(--accent);
   color: var(--bg-primary);
+}
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    right: 50px;
+  }
 }
