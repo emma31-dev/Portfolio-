@@ -14,6 +14,32 @@ const Skills = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
   
   const dappTypes: DAppType[] = [
     {
+      title: "Portfolio Websites",
+      description: "Modern, responsive portfolios that showcase your work",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+          <path d="M3 9H21" stroke="currentColor" strokeWidth="2"/>
+          <path d="M9 3V9" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="8" cy="15" r="2" stroke="currentColor" strokeWidth="2"/>
+          <path d="M14 13L18 17M18 13L14 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      ),
+      features: ["Custom Design", "Performance Optimized", "SEO Ready", "Mobile Responsive"]
+    },
+    {
+      title: "E-commerce Platforms",
+      description: "Full-featured online stores with payment integration",
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 2L1 6V18L9 22L17 18L23 21V9L17 6L9 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 22V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M17 18V6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      features: ["Shopping Cart", "Payment Gateway", "Inventory Management", "Order Tracking"]
+    },
+    {
       title: "DeFi Applications",
       description: "Decentralized finance platforms for the future of banking",
       icon: (
@@ -60,32 +86,6 @@ const Skills = forwardRef<HTMLElement, { className?: string }>((props, ref) => {
         </svg>
       ),
       features: ["Token-Gated Content", "Decentralized Identity", "On-Chain Messaging", "Creator Monetization"]
-    },
-    {
-      title: "Portfolio Websites",
-      description: "Modern, responsive portfolios that showcase your work",
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
-          <path d="M3 9H21" stroke="currentColor" strokeWidth="2"/>
-          <path d="M9 3V9" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="8" cy="15" r="2" stroke="currentColor" strokeWidth="2"/>
-          <path d="M14 13L18 17M18 13L14 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      ),
-      features: ["Custom Design", "Performance Optimized", "SEO Ready", "Mobile Responsive"]
-    },
-    {
-      title: "E-commerce Platforms",
-      description: "Full-featured online stores with payment integration",
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 2L1 6V18L9 22L17 18L23 21V9L17 6L9 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M9 22V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M17 18V6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      features: ["Shopping Cart", "Payment Gateway", "Inventory Management", "Order Tracking"]
     }
   ]
 

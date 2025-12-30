@@ -6,11 +6,13 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import type { Project } from './data/projects';
 import './App.css';
 
 function App() {
   const heroRef = useRef<HTMLElement>(null);
   const [showNavbar, setShowNavbar] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
     const navbarObserver = new IntersectionObserver(
@@ -25,12 +27,16 @@ function App() {
     };
   }, []);
 
+  const handleProjectSelect = (project: Project | null) => {
+    setSelectedProject(project);
+  };
+
   return (
     <div className="App">
-      {showNavbar && <Navbar />}
+      {showNavbar && <Navbar onProjectSelect={handleProjectSelect} />}
       <Hero ref={heroRef} />
       <About />
-      <Projects />
+      <Projects selectedProject={selectedProject} onProjectSelect={handleProjectSelect} />
       <Skills />
       <Contact />
       <Footer />
