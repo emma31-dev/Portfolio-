@@ -284,10 +284,16 @@
   .modal-body {
     overflow-y: auto;
     max-height: calc(90vh - 300px);
+    padding: 3rem 3rem 180px;
   }
 
   .modal-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 2rem 3rem;
+    border-radius: 0 0 16px 16px;
   }
 }
 
@@ -349,7 +355,7 @@
 }
 
 .modal-body {
-  padding: 3rem;
+  padding: 3rem 3rem 180px;
   flex: 1;
   max-width: 1200px;
   margin: 0 auto;
@@ -463,15 +469,20 @@
 }
 
 .modal-footer {
-  padding: 2rem 3rem 3rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 3rem;
+  background: var(--bg-primary);
   border-top: 2px solid var(--border-color);
   display: flex;
   gap: 1rem;
-  justify-content: flex-end;
+  justify-content: center;
   flex-shrink: 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .modal-footer .btn {
@@ -501,7 +512,7 @@
   }
 
   .modal-body {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 200px;
   }
 
   .modal-analytics {
@@ -550,8 +561,9 @@
   }
 
   .modal-footer {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
     flex-direction: column;
+    gap: 0.75rem;
   }
 
   .modal-footer .btn {

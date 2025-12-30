@@ -73,6 +73,11 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
                   emmanuelfidel07@gmail.com
                 </a>
               </li>
+              <li>
+                <a href="mailto:dev.emmanuel.fidelis.essien@proton.me">
+                  dev.emmanuel.fidelis.essien@proton.me
+                </a>
+              </li>
               <li>Available for remote work</li>
               <li>Response within 24 hours</li>
             </ul>

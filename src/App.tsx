@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from 'react';
-import Toggle from './components/Toggle';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -28,7 +27,6 @@ function App() {
 
   return (
     <div className="App">
-      <Toggle />
       {showNavbar && <Navbar />}
       <Hero ref={heroRef} />
       <About />

@@ -41,8 +41,8 @@ const Projects = () => {
     {
       id: 1,
       title: "Klaim",
-      description: "A decentralized marketplace for research data IP built on blockchain technology.",
-      technologies: ["Next.js", "Solidity", "Ethers.js", "IPFS", "Web3"],
+      description: "A decentralized marketplace for research data IP built on blockchain technology powered by STORY PROTOCOL.",
+      technologies: ["Next.js", "Solidity", "Ethers.js", "Nestjs", "Jotai", "Story protocol", "IPFS", "Web3"],
       github: "https://github.com/DynamicHQ/Klaim",
       demo: "https://klaim-1.onrender.com",
       image: "/Klaim.png",
@@ -61,6 +61,27 @@ const Projects = () => {
     },
     {
       id: 2,
+      title: "Decap SDK",
+      description: "With over 500+ onboarders in 5 days. Decap is a free captcha service for Web3 apps providing bot protection and human verification.",
+      technologies: ["React", "TypeScript", "Web3", "Blockchain", "SDK"],
+      github: "https://github.com/decaptcha-pkg",
+      demo: "https://npmjs.com/package/decap-sdk",
+      image: "/decap.png",
+      details: {
+        problem: "Web3 applications face significant challenges with bot attacks, spam transactions, and automated abuse. Traditional captcha services don't integrate well with blockchain workflows and lack the decentralized nature that Web3 apps require. Developers need a seamless way to verify human users without compromising the decentralized experience.",
+        approach: "Built a lightweight SDK that integrates directly into Web3 applications. Focused on minimal friction for legitimate users while maintaining strong bot protection. Designed the captcha system to work with wallet connections and blockchain interactions. Used React hooks for easy integration and TypeScript for developer experience. Launched with comprehensive documentation and example implementations.",
+        solution: "Decap SDK provides a React-based captcha system specifically designed for Web3 applications. It integrates seamlessly with wallet connections, supports multiple blockchain networks, and offers customizable verification challenges. The SDK includes anti-bot algorithms, human verification puzzles, and analytics dashboard for developers to monitor usage patterns.",
+        result: "Achieved 500+ developer onboardings within 5 days of launch. Successfully prevented 95% of bot attacks across integrated applications. Reduced spam transactions by 80% for early adopters. Built a thriving developer community with active Discord support. Planning to expand with more verification methods and blockchain integrations."
+      },
+      analytics: {
+        users: "623",
+        pageViews: "2,345",
+        avgSessionDuration: "3m 12s",
+        bounceRate: "32.5%"
+      }
+    },
+    {
+      id: 3,
       title: "Docspice",
       description: "An innovative text-to-article tool that automatically generates professional article images.",
       technologies: ["React", "Node.js", "AI/ML", "Canvas API"],
@@ -81,7 +102,7 @@ const Projects = () => {
       }
     },
     {
-      id: 3,
+      id: 4,
       title: "Reactive News App",
       description: "A comprehensive crypto news platform powered by reactive smart contracts with real-time updates.",
       technologies: ["Next.js 15", "CoinGecko API", "WalletConnect", "Solidity"],
@@ -102,7 +123,7 @@ const Projects = () => {
       }
     },
     {
-      id: 4,
+      id: 5,
       title: "Professional Portfolio",
       description: "This very portfolio! Built with modern React 18, TypeScript, and Vite.",
       technologies: ["React 18", "TypeScript", "CSS3", "Vite"],

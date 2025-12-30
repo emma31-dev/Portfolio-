@@ -99,6 +99,33 @@
   flex-shrink: 0;
 }
 
+.hero-social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  border: 2px solid var(--border-color);
+}
+
+.hero-social-links a:hover {
+  background: var(--gradient-start);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 .hero-illustration {
   position: absolute;
   bottom: 0;

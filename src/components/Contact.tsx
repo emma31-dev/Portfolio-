@@ -13,7 +13,7 @@ const Contact = () => {
       <div className="container">
 
         {/* Hire Me CTA */}
-        <div className="hire-me-cta">
+        <div className="hire-me-cta" id='cta'>
           <div className="cta-content">
             <h3>Ready to Build Something Amazing?</h3>
             <p>Let's turn your ideas into reality. I'm available for freelance projects, full-time opportunities, and consulting work.</p>

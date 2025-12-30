@@ -9,8 +9,10 @@
   transition: all 0.3s ease;
 }
 
-[data-theme="dark"] .navbar {
-  background: rgba(20, 20, 20, 0.95);
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: rgba(20, 20, 20, 0.95);
+  }
 }
 
 .nav-container {
@@ -22,6 +24,23 @@
   align-items: center;
   height: 70px;
   gap: 2rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-brand:hover {
+  color: var(--accent);
 }
 
 .nav-hire-btn {
@@ -108,6 +127,10 @@
     justify-content: space-between;
   }
 
+  .nav-brand {
+    font-size: 1.25rem;
+  }
+
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -124,8 +147,10 @@
     justify-content: center;
   }
 
-  [data-theme="dark"] .nav-menu {
-    background-color: rgba(26, 32, 44, 0.98);
+  @media (prefers-color-scheme: dark) {
+    .nav-menu {
+      background-color: rgba(26, 32, 44, 0.98);
+    }
   }
 
   .nav-menu.active {

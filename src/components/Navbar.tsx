@@ -12,9 +12,10 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <a href="#" className="nav-hire-btn">
-          Hire Me
-        </a>
+        <div className="nav-logo">
+          <a href="#home" className="nav-brand">Portfolio</a>
+        </div>
+        
         <div className={isMenuOpen ? "nav-menu active" : "nav-menu"}>
           <a href="#home" className="nav-link" onClick={() => setIsMenuOpen(false)}>
             Home
@@ -34,6 +35,9 @@ const Navbar: React.FC = () => {
         </div>
         
         <div className="nav-right">
+          <a href="https://www.upwork.com/freelancers/~01d3795bc9ec0baaf9" target="_blank" rel="noopener noreferrer" className="nav-hire-btn">
+            Hire Me
+          </a>
           <div className="nav-toggle" onClick={toggleMenu}>
             <span className="bar"></span>
             <span className="bar"></span>
