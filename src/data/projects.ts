@@ -47,8 +47,8 @@ export const projects: Project[] = [
     title: "Decap SDK",
     description: "With over 500+ onboarders in 5 days. Decap is a free captcha service for Web3 apps providing bot protection and human verification.",
     technologies: ["React", "TypeScript", "Web3", "Blockchain", "SDK"],
-    github: "https://github.com/decaptcha-pkg",
-    demo: "https://decap-captcha.vercel.app",
+    github: "https://github.com/emmafidel31/decaptcha-pkg",
+    demo: "https://www.npmjs.com/package/decap-sdk",
     image: "/decap.png",
     details: {
       problem: "Web3 applications face significant challenges with bot attacks, spam transactions, and automated abuse. Traditional captcha services don't integrate well with blockchain workflows and lack the decentralized nature that Web3 apps require. Developers need a seamless way to verify human users without compromising the decentralized experience.",
