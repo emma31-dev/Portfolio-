@@ -1,9 +1,8 @@
-import { forwardRef, useEffect, useState } from 'react'
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver'
+import { useEffect, useState } from 'react'
+
 import './Hero.css'
 
-const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) => {
-  const { ref: observerRef, isVisible } = useIntersectionObserver({ threshold: 0.1 })
+const Hero = () => {
   const [text, setText] = useState('')
   const fullText = 'Aspiring Embedded Engineer'
   const [index, setIndex] = useState(0)
@@ -21,13 +20,7 @@ const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) 
   return (
     <section 
       id="home" 
-      className={`hero animate-on-scroll ${isVisible ? 'visible' : ''}`} 
-      ref={(node) => {
-        observerRef.current = node
-        if (typeof ref === 'function') ref(node)
-        else if (ref) ref.current = node
-      }} 
-      {...props}
+      className="hero animate-on-scroll" 
     >
       <div className="hero-container">
         <div className="hero-content">
@@ -61,11 +54,8 @@ const Hero = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>((props, ref) 
           </div>
         </div>
       </div>
-      <div className="hero-illustration">
-        <img src="/illustration.png" alt="Developer illustration" />
-      </div>
     </section>
   )
-})
+}
 
 export default Hero

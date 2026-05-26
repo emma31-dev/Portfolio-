@@ -126,20 +126,6 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.hero-illustration {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 40vh;
-  z-index: 2000;
-}
-
-.hero-illustration img {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-}
-
 /* Mobile styles */
 @media (max-width: 768px) {
   .hero-container {
