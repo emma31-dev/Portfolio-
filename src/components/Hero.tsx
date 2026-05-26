@@ -20,7 +20,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="hero animate-on-scroll" 
+      className="hero animate-on-scroll visible" 
     >
       <div className="hero-container">
         <div className="hero-content">
