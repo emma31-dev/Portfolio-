@@ -1,190 +1,194 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap");
 
 /* CSS Variables for Light/Dark Mode */
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f5f5f5;
-  --bg-tertiary: #fafafa;
-  --text-primary: #000000;
-  --text-secondary: #404040;
-  --text-tertiary: #666666;
-  --border-color: #e0e0e0;
-  --shadow: rgba(0, 0, 0, 0.08);
-  --accent: #000000;
-  --accent-hover: #333333;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --bg-tertiary: #fafafa;
+    --text-primary: #000000;
+    --text-secondary: #404040;
+    --text-tertiary: #666666;
+    --border-color: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.08);
+    --accent: #000000;
+    --accent-hover: #333333;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a1a;
-    --bg-tertiary: #2a2a2a;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --text-tertiary: #808080;
-    --border-color: #333333;
-    --shadow: rgba(255, 255, 255, 0.05);
-    --accent: #ffffff;
-    --accent-hover: #cccccc;
-  }
+    :root {
+        --bg-primary: #0a0a0a;
+        --bg-secondary: #1a1a1a;
+        --bg-tertiary: #2a2a2a;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --text-tertiary: #808080;
+        --border-color: #333333;
+        --shadow: rgba(255, 255, 255, 0.05);
+        --accent: #ffffff;
+        --accent-hover: #cccccc;
+    }
 }
 
 /* Global Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Jost', sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: "Jost", sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 .App {
-  font-family: 'Jost', sans-serif;
-  line-height: 1.6;
-  color: var(--text-primary);
+    font-family: "Jost", sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-  position: relative;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    position: relative;
 }
 
 .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 2px;
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
-  text-align: center;
-  color: var(--text-tertiary);
-  margin-bottom: 3rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+    font-size: 1.125rem;
+    text-align: center;
+    color: var(--text-tertiary);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Button Styles */
 .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  white-space: nowrap;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 3 #000000;
-  cursor: pointer;
-  border: none;
-  font-size: 1rem;
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 3 #000000;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: var(--bg-primary);
-  z-index: 3000;
+    background: var(--accent);
+    color: var(--bg-primary);
+    z-index: 3000;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--shadow);
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  z-index: 1000;
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    z-index: 1000;
 }
 
 .btn-secondary:hover {
-  background: var(--accent);
-  color: var(--bg-primary);
-  transform: translateY(-2px);
+    background: var(--accent);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
 }
 
 /* Smooth scrolling */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Global Animations */
 @keyframes slideUpFade {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Global section animation with Intersection Observer */
 .animate-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out;
 }
 
 .animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
+    body {
+        font-size: 14px;
+    }
 
-  .container {
-    padding: 0 15px;
-  }
-  
-  .section-title {
-    font-size: 1.75rem;
-  }
-  
-  .section-subtitle {
-    font-size: 0.9rem;
-  }
+    .container {
+        padding: 0 15px;
+    }
 
-  .btn {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
 }
